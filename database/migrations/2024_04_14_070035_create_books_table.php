@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->unsignedBigInteger('isbn')->primary(); //ISBN
+            $table->string('title'); //書名
+            $table->string('author'); //著者名
             $table->timestamps();
         });
     }
