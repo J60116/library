@@ -3,5 +3,5 @@
 @section('main')
     <h1>図書管理システム</h1>
     <br>
-    <a href="/db/login" class="btn btn-dark">ログイン</a>
+    <a href="/login" class="btn btn-dark">ログイン</a>
 @endsection
