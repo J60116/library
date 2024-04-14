@@ -10,6 +10,8 @@
     <h1>図書管理システム</h1>
     <br>
     <p>ようこそ、{{session('user_name')}}さん</p>
+    <a href="/material/index">書籍一覧</a>
+    <hr>
     <form action="/" method="post">
         @csrf
         <input type="submit" value="ログアウト" class="btn btn-dark">
