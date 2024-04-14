@@ -21,5 +21,26 @@ class BooksTableSeeder extends Seeder
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
+        DB::table('books')->insert([
+            'isbn' => 9784297128524,
+            'title' => '図解でやさしくわかる ネットワークのしくみ超入門',
+            'author' => '網野衛二',
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
+        DB::table('books')->insert([
+            'isbn' => 9784800712349,
+            'title' => 'いちばんやさしいSQL入門教室',
+            'author' => '矢沢久雄',
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
+        DB::table('books')->insert([
+            'isbn' => 9784534059079,
+            'title' => 'この1冊ですべてわかる 新版 SEの基本',
+            'author' => '山田隆太',
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
     }
 }
