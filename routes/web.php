@@ -17,3 +17,4 @@ Route::get('/login',function () {
 
 Route::get('/login',[TopController::class,'loginCheck']);
 Route::post('/library/index',[TopController::class,'login']);
+Route::post('/',[TopController::class,'logout']);
