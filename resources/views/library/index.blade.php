@@ -7,7 +7,11 @@
             {{ session('flash_login') }}
         </div>
     @endif
-    <h1>書籍管理システム</h1>
+    <h1>図書管理システム</h1>
     <br>
     <p>ようこそ、{{session('user_name')}}さん</p>
+    <form action="/" method="post">
+        @csrf
+        <input type="submit" value="ログアウト" class="btn btn-dark">
+    </form>
 @endsection
