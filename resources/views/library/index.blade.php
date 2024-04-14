@@ -10,7 +10,14 @@
     <h1>図書管理システム</h1>
     <br>
     <p>ようこそ、{{session('user_name')}}さん</p>
-    <a href="/material/index">書籍一覧</a>
+    <ul>
+        <li>
+            <a href="/material/index">materialsテーブルの一覧表示</a>
+        </li>
+        <li>
+            <a href="https://github.com/J60116/library">GitHubリポジトリ「library」</a>
+        </li>
+    </ul>
     <hr>
     <form action="/" method="post">
         @csrf
