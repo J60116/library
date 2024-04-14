@@ -11,4 +11,9 @@ class Book extends Model
     protected $primaryKey = 'isbn';
     
     use HasFactory;
+
+    public function materials(){
+        // 1対多の関係は「hasMany()」で指定
+        return $this->hasMany(Material::class);
+    }
 }
