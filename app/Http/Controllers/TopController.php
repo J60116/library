@@ -57,4 +57,12 @@ class TopController extends Controller
             return view('login');
         }
     }
+    // ログアウト機能
+    public function logout(Request $req)
+    {
+        // 指定したデータを削除
+        $req->session()->forget('user_id');
+        $req->session()->forget('user_name');
+        return view('index');
+    }
 }
