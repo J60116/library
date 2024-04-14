@@ -44,4 +44,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
+    public function libraries(){
+        // 1対多の関係は「hasMany()」で指定
+        return $this->hasMany(Library::class);
+    }
+
+    public function reviews(){
+        // 1対多の関係は「hasMany()」で指定
+        return $this->hasMany(Review::class);
+    }
 }
