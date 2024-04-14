@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('material_id'); //貸出した資料ID
             $table->unsignedBigInteger('user_id');//貸出したユーザーID
             $table->date('checkedout_date');//貸出日
-            $table->date('return_date');//返却日
+            $table->date('return_date')->nullable(true);//返却日
             $table->timestamps();
 
             //外部キー設定

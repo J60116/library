@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('comment'); //コメント
-            $table->Integer('rank'); //おすすめ度(0~5)
             $table->unsignedBigInteger('material_id'); //レビューした資料ID
             $table->unsignedBigInteger('user_id'); //レビューしたユーザID
+            $table->string('comment'); //コメント
+            $table->Integer('rank'); //おすすめ度(0~5)
             $table->timestamps();
 
             //外部キー設定
