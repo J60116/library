@@ -1,6 +1,13 @@
 @extends('layouts.base')
 @section('title','書籍一覧')
 @section('main')
+    @if (session('flash_message'))
+        <!-- データベース処理失敗 -->
+        <div class="flash_message bg-danger text-center py-3 my-0 colorWhite">
+            {{ session('flash_message') }}
+        </div>
+        <br>
+    @endif
     <h1>materials index</h1>
     <br>
     <div><!-- 書籍の一覧 -->
@@ -22,7 +29,7 @@
                         </figure>            
                     </td>
                     <td>
-                        <form action="/bookreview/index" method="post">
+                        <form action="/review/index" method="post">
                             @csrf
                             <input type="hidden" name="isbn" value="{{ $material->book_isbn }}">
                             <input type="submit" class="btn btn-link" value="{{ $material->book->title }}">
