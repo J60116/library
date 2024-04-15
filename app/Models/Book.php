@@ -16,4 +16,10 @@ class Book extends Model
         // 1対多の関係は「hasMany()」で指定
         return $this->hasMany(Material::class);
     }
+    
+    public function reviews(){
+        // 1対多の関係は「hasMany()」で指定
+        return $this->hasMany(Reviews::class);
+    }
+
 }

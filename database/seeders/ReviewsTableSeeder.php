@@ -14,7 +14,7 @@ class ReviewsTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('reviews')->insert([
-            'material_id'=>2,
+            'book_isbn'=>9784295017936,
             'user_id'=>1,
             'comment'=>'スッキリ',
             'rank'=>3,

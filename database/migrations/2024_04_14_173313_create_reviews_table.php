@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('material_id'); //レビューした資料ID
+            $table->unsignedBigInteger('book_isbn'); //レビューした資料ISBN
             $table->unsignedBigInteger('user_id'); //レビューしたユーザID
             $table->string('comment'); //コメント
             $table->Integer('rank'); //おすすめ度(0~5)
             $table->timestamps();
 
             //外部キー設定
-            $table->foreign('material_id')->references('id')->on('materials');
+            $table->foreign('book_isbn')->references('isbn')->on('books');
             $table->foreign('user_id')->references('id')->on('users');
 
         });

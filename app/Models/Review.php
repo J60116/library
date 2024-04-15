@@ -13,8 +13,9 @@ class Review extends Model
         // 多対1の関係は「belongsTo()」で指定
         return $this->belongsTo(User::class);
     }
-    public function material(){
+    
+    public function book(){
         // 多対1の関係は「belongsTo()」で指定
-        return $this->belongsTo(Material::class);
+        return $this->belongsTo(Book::class);
     }
 }
