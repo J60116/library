@@ -8,7 +8,6 @@
     <style>
         body { width: 600px; margin: 100px auto; }
     </style>
-    <link rel="stylesheet" href="{{ asset('/css/base.css') }}">
 </head>
 <body>
     @section('main')
