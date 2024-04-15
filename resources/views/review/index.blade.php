@@ -21,7 +21,7 @@
                                 @if($i<=$avg_rank)
                                     <span style="color:orange">★</span>
                                 @else
-                                    <span style="color:gray">★</span>
+                                    <span style="color:lightgray">★</span>
                                 @endif
                             @endfor
                             ({{ number_format($avg_rank,2) }})
@@ -43,10 +43,9 @@
         <h5>自分のレビュー</h5>
         <hr>
         @if(!isset($myReview->comment))
-            <form action="/bookreview/create">
+            <form action="/review/create" method="post">
                 @csrf
                 登録なし
-                <input type="hidden" name="user_id" value="session('user_id')">
                 <input type="hidden" name="isbn" value="{{ $book->isbn }}">
                 <input type="submit" value="新規登録">
             </form>
@@ -65,7 +64,7 @@
                         @if($i<=$myReview->rank)
                             <span style="color:orange">★</span>
                         @else
-                            <span style="color:gray">★</span>
+                            <span style="color:lightgray">★</span>
                         @endif
                     @endfor
                     </td>
