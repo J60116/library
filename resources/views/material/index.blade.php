@@ -17,14 +17,15 @@
                 <tr>
                     <td style="height: 120px">
                         <figure>
-                            <img src="{{'https://ndlsearch.ndl.go.jp/thumbnail/' . $material->book->isbn . '.jpg'}}" 
-                            alt="書籍イメージ画像" title="{{ 'ISBN: '.$material->isbn }}" style="width: 70px">
+                            <img src="{{'https://ndlsearch.ndl.go.jp/thumbnail/' . $material->book_isbn . '.jpg'}}" 
+                            alt="書籍イメージ画像" title="{{ 'ISBN: '.$material->book_isbn }}" style="width: 70px">
                         </figure>            
                     </td>
                     <td>
                         <form action="/bookreview/index" method="post">
-                            <input type="hidden" name="material_id" value="{{ $material->book->title }}">
-                                <input type="submit" value="{{ $material->book->title }}">
+                            @csrf
+                            <input type="hidden" name="isbn" value="{{ $material->book_isbn }}">
+                            <input type="submit" class="btn btn-link" value="{{ $material->book->title }}">
                         </form>
                     </td>
                     <td>{{ $material->book->author }}</td>

@@ -4,32 +4,39 @@
     <h1>レビュー({{ $count_reviews }}件)</h1>
     <br>
     <div><!-- 書籍情報 -->
-        <h4>{{ $material->title }}</h4>
+        <h4>{{ $book->title }}</h4>
         <hr>
-        <img src="{{'https://ndlsearch.ndl.go.jp/thumbnail/' . $material->book->isbn . '.jpg'}}" alt="書籍イメージ画像" width="150" align="left" hspace="20px">
-        <table> 
-            <tr><th style="width:100px">ISBN</th><th style="width:20px">:</th><td>{{ $material->book->isbn }}</td></tr>
-            <tr><th>所蔵日</th><th>:</th><td>{{ $material->created_at }}</td></tr>
-            <tr><th>更新日</th><th>:</th><td>{{ $material->updated_at }}</td></tr>
-            <tr>
-                <th>総合評価</th>
-                <th>:</th>
-                <td>
-                @if(isset($avg_rank))
-                    @for($i=1;$i<=5;$i++)
-                        @if($i<=$avg_rank)
-                            <span style="color:orange">★</span>
+        <div>
+            <img src="{{'https://ndlsearch.ndl.go.jp/thumbnail/' . $book->isbn . '.jpg'}}" alt="書籍イメージ画像" width="150" align="left" hspace="20px
+                onerror="this.src='resources\images\no_image.png';">
+            <table> 
+                <tr><th style="width:100px">ISBN</th><th style="width:20px">:</th><td>{{ $book->isbn }}</td></tr>
+                <tr><th>著者名</th><th>:</th><td>{{ $book->author }}</td></tr>
+                <tr>
+                    <th>総合評価</th>
+                    <th>:</th>
+                    <td>
+                        @if(isset($avg_rank))
+                            @for($i=1;$i<=5;$i++)
+                                @if($i<=$avg_rank)
+                                    <span style="color:orange">★</span>
+                                @else
+                                    <span style="color:gray">★</span>
+                                @endif
+                            @endfor
+                            ({{ number_format($avg_rank,2) }})
                         @else
-                            <span style="color:gray">★</span>
+                            なし
                         @endif
-                    @endfor
-                    ({{ number_format($avg_rank,2) }})
-                @else
-                    なし
-                @endif
-                </td>
-            </tr>
-        </table>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin:20px">
+                所蔵数:<strong>{{ $count_stock }}</strong>
+                貸出数:<strong>{{ $count_checked }}</strong>
+                在庫数:<strong>{{ $count_stock - $count_checked }}</strong>
+            </div>
+        </div>
         <br><br><br><br><br><br>
     </div>
     <div><!-- マイレビュー -->
@@ -39,8 +46,8 @@
             <form action="/bookreview/create">
                 @csrf
                 登録なし
-                <input type="hidden" name="emp_id" value="session('emp_id')">
-                <input type="hidden" name="isbn" value="{{ $material->book->isbn }}">
+                <input type="hidden" name="user_id" value="session('user_id')">
+                <input type="hidden" name="isbn" value="{{ $book->isbn }}">
                 <input type="submit" value="新規登録">
             </form>
         @else
@@ -98,5 +105,5 @@
         <!-- {{ $reviews_paginate->links() }} -->
         <br>
     </div>
-    <a href="/library/index">書籍一覧に戻る</a>
+    <a href="/material/index">書籍一覧に戻る</a>
 @endsection
