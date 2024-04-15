@@ -22,4 +22,7 @@ Route::get('/library/index',[TopController::class,'loginCheck']);
 Route::post('/library/index',[TopController::class,'login']);
 Route::post('/',[TopController::class,'logout']);
 Route::get('/material/index',[MaterialController::class,'index']);
-Route::post('/bookreview/index',[ReviewController::class,'index']);
+
+Route::post('/review/index',[ReviewController::class,'index']);
+Route::post('/review/create',[ReviewController::class,'create']);
+Route::post('/review/store',[ReviewController::class,'store']);
