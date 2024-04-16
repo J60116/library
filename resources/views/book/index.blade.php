@@ -40,6 +40,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $books->links() }}
     </div>
     <a href="/library/index">メニューに戻る</a></li>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book; //追加
+use Illuminate\Pagination\Paginator;
 
 class BookController extends Controller
 {
@@ -12,7 +13,7 @@ class BookController extends Controller
     {
         $data = [
             // 重複した書籍は1冊として表示
-            'books' => Book::all()
+            'books' => Book::paginate(3)
         ];
         return view('book.index',$data);
     }
