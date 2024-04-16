@@ -12,7 +12,7 @@
     <p>ようこそ、{{session('user_name')}}さん</p>
     <ul>
         <li>
-            <a href="/material/index">materialsテーブルの一覧表示</a>
+            <a href="/book/index">materialsテーブルの一覧表示</a>
         </li>
         <li>
             <a href="/material/create">書籍の新規追加</a>

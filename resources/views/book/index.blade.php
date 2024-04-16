@@ -8,7 +8,7 @@
         </div>
         <br>
     @endif
-    <h1>materials index</h1>
+    <h1>books index</h1>
     <br>
     <div><!-- 書籍の一覧 -->
         <table class="table">
@@ -20,22 +20,22 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($materials as $material)
+                @foreach($books as $record)
                 <tr>
                     <td style="height: 120px">
                         <figure>
-                            <img src="{{'https://ndlsearch.ndl.go.jp/thumbnail/' . $material->book_isbn . '.jpg'}}" 
-                            alt="書籍イメージ画像" title="{{ 'ISBN: '.$material->book_isbn }}" style="width: 70px">
+                            <img src="{{'https://ndlsearch.ndl.go.jp/thumbnail/' . $record->isbn . '.jpg'}}" 
+                            alt="書籍イメージ画像" title="{{ 'ISBN: '.$record->isbn }}" style="width: 70px">
                         </figure>            
                     </td>
                     <td>
                         <form action="/review/index" method="post">
                             @csrf
-                            <input type="hidden" name="isbn" value="{{ $material->book_isbn }}">
-                            <input type="submit" class="btn btn-link" value="{{ $material->book->title }}">
+                            <input type="hidden" name="isbn" value="{{ $record->isbn }}">
+                            <input type="submit" class="btn btn-link" value="{{ $record->title }}">
                         </form>
                     </td>
-                    <td>{{ $material->book->author }}</td>
+                    <td>{{ $record->author }}</td>
                 </tr>
                 @endforeach
             </tbody>

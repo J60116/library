@@ -11,5 +11,5 @@
         </tr>
     </table>
     <br>
-    <a href="/material/index">所有書籍を確認する</a>
+    <a href="/book/index">所有書籍を確認する</a>
 @endsection
