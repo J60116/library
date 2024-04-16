@@ -15,6 +15,9 @@
             <a href="/material/index">materialsテーブルの一覧表示</a>
         </li>
         <li>
+            <a href="/material/create">書籍の新規追加</a>
+        </li>
+        <li>
             <a href="https://github.com/J60116/library">GitHubリポジトリ「library」</a>
         </li>
     </ul>
