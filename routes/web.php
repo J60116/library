@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\BookController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -22,7 +23,7 @@ Route::get('/library/index',[TopController::class,'loginCheck']);
 Route::post('/library/index',[TopController::class,'login']);
 Route::post('/',[TopController::class,'logout']);
 
-Route::get('/material/index',[MaterialController::class,'index']);
+Route::get('/book/index',[BookController::class,'index']);
 Route::get('/material/create',function () {
     return view('material/create');
 });
