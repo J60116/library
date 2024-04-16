@@ -21,7 +21,12 @@ Route::get('/login',[TopController::class,'loginCheck']);
 Route::get('/library/index',[TopController::class,'loginCheck']);
 Route::post('/library/index',[TopController::class,'login']);
 Route::post('/',[TopController::class,'logout']);
+
 Route::get('/material/index',[MaterialController::class,'index']);
+Route::get('/material/create',function () {
+    return view('material/create');
+});
+Route::post('/material/store',[MaterialController::class,'store']);
 
 Route::post('/review/index',[ReviewController::class,'index']);
 Route::post('/review/create',[ReviewController::class,'create']);
