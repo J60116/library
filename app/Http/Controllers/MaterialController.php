@@ -9,14 +9,14 @@ use App\Models\Book; //追加
 class MaterialController extends Controller
 {
     // 所蔵書籍の一覧を表示する
-    public function index(Request $req)
-    {
-        $data = [
-            // 重複した書籍は1冊として表示
-            'materials' => Material::distinct()->select('book_isbn')->get()
-        ];
-        return view('material/index',$data);
-    }
+    // public function index(Request $req)
+    // {
+    //     $data = [
+    //         // 重複した書籍は1冊として表示
+    //         'materials' => Material::distinct()->select('book_isbn')->get()
+    //     ];
+    //     return view('material/index',$data);
+    // }
     // 書籍の登録
     public function store(Request $req)
     {
