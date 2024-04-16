@@ -15,6 +15,6 @@
     <form action="/review/index" method="post">
         @csrf
         <input type="hidden" name="isbn" value="{{ $isbn }}">
-        <input type="submit" class="btn btn-link" value="レビューに戻る">
+        <input type="submit" class="btn btn-link" value="書籍レビューに戻る">
     </form>
 @endsection
