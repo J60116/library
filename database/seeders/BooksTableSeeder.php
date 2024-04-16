@@ -42,5 +42,21 @@ class BooksTableSeeder extends Seeder
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
+        
+        // 追加
+        DB::table('books')->insert([
+            'isbn' => 9784295018452,
+            'title' => 'スッキリわかるJava入門 実践編(第4版)',
+            'author' => '中山清喬',
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
+        DB::table('books')->insert([
+            'isbn' => 9784798172439,
+            'title' => 'アルゴリズム図鑑',
+            'author' => '石田保輝　他',
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
     }
 }

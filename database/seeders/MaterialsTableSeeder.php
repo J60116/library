@@ -44,5 +44,13 @@ class MaterialsTableSeeder extends Seeder
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
+        
+        // 追加
+        DB::table('materials')->insert([
+            'book_isbn' => 9784798172439,
+            'checked' => 1,
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
     }
 }
