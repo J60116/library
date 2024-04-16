@@ -104,5 +104,5 @@
         <!-- {{ $reviews_paginate->links() }} -->
         <br>
     </div>
-    <a href="/material/index">書籍一覧に戻る</a>
+    <a href="/book/index">書籍一覧に戻る</a>
 @endsection
